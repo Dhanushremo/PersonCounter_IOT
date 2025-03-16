@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IoT Person Counter - Dashboard</title>
+    <title>IoT Person Counter - Working</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .btn-hover {
@@ -20,7 +20,9 @@
             background: white;
             border-radius: 10px;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+            padding: 15px;
+            flex: 1;
+            min-width: 250px;
         }
     </style>
 </head>
@@ -30,53 +32,60 @@
     <nav class="fixed top-0 left-0 w-full flex items-center justify-between px-6 py-3 bg-white shadow-md">
         <h1 class="text-xl font-bold text-[#007BFF]">IoT Person Counter</h1>
         <div class="flex items-center space-x-4">
-            <span class="text-gray-700 text-sm">Welcome, ${u.name}</span>
-            <a href="logout.jsp" class="px-3 py-1 bg-red-500 text-white rounded-full text-xs">Logout</a>
+            <span align="right" class="text-gray-700 text-sm">Welcome, ${u.name}</span>
         </div>
     </nav>
 
-    <!-- Main Content (Full-Screen Flexbox Layout) -->
-    <main class="flex flex-col items-center justify-center flex-grow px-4 mt-16">
-        <div class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-6">
-            
-            <!-- Sensor Data -->
-            <div class="card flex flex-col items-center text-center w-full">
-                <h2 class="text-2xl font-bold text-[#333A56]">📊 Live Sensor Data</h2>
-                <p class="text-gray-600 text-xs mt-1">Real-time updates on auditorium occupancy.</p>
-                <p class="text-gray-700 text-sm mt-2">Total People Counted: <span class="font-semibold">23</span></p>
-                <p class="text-gray-700 text-sm">Last Entry Time: <span class="font-semibold">10:45 AM</span></p>
-                <p class="text-gray-700 text-sm">Last Exit Time: <span class="font-semibold">10:50 AM</span></p>
-                <img src="${pageContext.request.contextPath}/images/iot.jpg"  alt="IoT Person Counter Dashboard" class="w-full rounded-lg shadow-md mt-2">
-            </div>
+    <!-- Main Content -->
+    <main class="flex flex-wrap items-center justify-center flex-grow px-4 mt-16 gap-4 max-w-6xl mx-auto">
+        
+        <!-- IoT Person Counter Objective -->
+        <div class="card text-center">
+            <h2 class="text-xl font-bold text-[#333A56]">🎯 Objective</h2>
+            <p class="text-gray-600 text-sm mt-2">The IoT Person Counter aims to track and monitor real-time foot traffic in auditoriums, offices, and other spaces using smart sensors and cloud-based dashboards.</p>
+        </div>
 
-            <!-- System Components -->
-            <div class="card flex flex-col items-center text-center w-full">
-                <h2 class="text-2xl font-bold text-[#333A56]">🔧 System Components</h2>
-                <p class="text-gray-600 text-xs mt-1">Devices used in the IoT Person Counter.</p>
-                <ul class="text-gray-700 text-xs list-disc pl-4 text-left">
-                    <li>🔹 <b>Infrared / PIR Sensors</b> - Detects movement</li>
-                    <li>🔹 <b>ESP8266 / Arduino</b> - Processes data</li>
-                    <li>🔹 <b>WiFi Module</b> - Sends data to the cloud</li>
-                    <li>🔹 <b>Web Dashboard</b> - Displays real-time stats</li>
-                    <li>🔹 <b>Power Supply & Casing</b> - Protects hardware</li>
-                </ul>
-                <img src="${pageContext.request.contextPath}/images/iot.jpg" alt="Live Sensor Data" class="w-full rounded-lg shadow-md mt-2">
-            </div>
+        <!-- Working of IoT Person Counter -->
+        <div class="card text-center">
+            <h2 class="text-xl font-bold text-[#333A56]">⚙ How It Works</h2>
+            <p class="text-gray-600 text-sm mt-2">Infrared or PIR sensors detect movement at entry and exit points. The microcontroller processes the data and updates the cloud-based dashboard in real time.</p>
+            <a href="working" class="inline-block mt-4 px-4 py-2 bg-blue-500 text-white rounded btn-hover">See Working</a>
+        </div>
 
-            <!-- User Dashboard -->
-            <div class="card flex flex-col items-center text-center w-full">
-                <h2 class="text-2xl font-bold text-[#333A56]">📈 User Dashboard</h2>
-                <p class="text-gray-600 text-xs mt-1">Monitor foot traffic and manage settings.</p>
-                <a href="dashboard.jsp" class="bg-[#007BFF] text-white px-4 py-1.5 rounded-full btn-hover transition text-xs mt-2 inline-block">Go to Dashboard</a>
-            </div>
+        <!-- System Components -->
+        <div class="card text-center">
+            <h2 class="text-xl font-bold text-[#333A56]">🔧 System Components</h2>
+            <ul class="text-gray-700 text-sm list-disc pl-6 text-left">
+                <li>Infrared / PIR Sensors - Detects movement</li>
+                <li>ESP8266 / Arduino - Processes data</li>
+                <li>WiFi Module - Sends data to the cloud</li>
+                <li>Web Dashboard - Displays real-time stats</li>
+                <li>Power Supply & Casing - Protects hardware</li>
+            </ul>
+        </div>
 
-            <!-- Settings -->
-            <div class="card flex flex-col items-center text-center w-full">
-                <h2 class="text-2xl font-bold text-[#333A56]">⚙ Settings</h2>
-                <p class="text-gray-600 text-xs mt-1">Configure devices and set alerts.</p>
-                <a href="settings.jsp" class="bg-gray-200 text-gray-800 px-4 py-1.5 rounded-full hover:bg-gray-300 transition text-xs mt-2 inline-block">Manage Settings</a>
-            </div>
-	
+        <!-- Real-Time Applications -->
+        <div class="card text-center">
+            <h2 class="text-xl font-bold text-[#333A56]">🌍 Real-Time Applications</h2>
+            <ul class="text-gray-700 text-sm list-disc pl-6 text-left">
+                <li>Smart Auditoriums</li>
+                <li>Retail Stores</li>
+                <li>Public Transport Stations</li>
+                <li>Workspaces and Offices</li>
+                <li>Libraries and Public Buildings</li>
+            </ul>
+        </div>
+
+        <!-- Advantages -->
+        <div class="card text-center">
+            <h2 class="text-xl font-bold text-[#333A56]">✅ Advantages</h2>
+            <ul class="text-gray-700 text-sm list-disc pl-6 text-left">
+                <li>Automated real-time tracking</li>
+                <li>Improved security & monitoring</li>
+                <li>Data-driven decision making</li>
+                <li>Efficient crowd management</li>
+                <li>Remote access via web dashboard</li>
+            </ul>
         </div>
     </main>
 

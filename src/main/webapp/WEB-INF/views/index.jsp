@@ -41,10 +41,10 @@
             <p class="text-gray-600 text-sm mt-2">Track the number of people entering and exiting in real-time.</p>
 
             <!-- Buttons -->
-            <div class="mt-4 space-x-3">
+           <!--  <div class="mt-4 space-x-3">
                 <a href="signup.html" class="bg-[#007BFF] text-white px-5 py-2 rounded-full btn-hover transition text-sm">Get Started</a>
                 <a href="learnMore.html" class="bg-gray-200 text-gray-800 px-5 py-2 rounded-full hover:bg-gray-300 transition text-sm">Learn More</a>
-            </div>
+            </div> -->
         </div>
     </main>
 

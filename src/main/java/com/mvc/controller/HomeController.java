@@ -1,5 +1,6 @@
 package com.mvc.controller;
 
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,8 +14,11 @@ import com.mvc.model.User;
 @Controller
 public class HomeController {
 	private static int status;
-	private static ClassPathXmlApplicationContext ac=new ClassPathXmlApplicationContext("beans.xml");
-	
+	private static ClassPathXmlApplicationContext ac=new ClassPathXmlApplicationContext("beans.xml"); 
+	@RequestMapping("/")
+	public String index() {
+		return "index";
+	}
 	@RequestMapping("/signIn")
 	public String signIn() {
 		return "signIn";
@@ -50,7 +54,26 @@ public class HomeController {
 		}
 		return "failure";
 	}
-  
+	@RequestMapping("/working")
+	public String working() {
+		return "working";
+	}
+	@RequestMapping("/code")
+	public String code() {
+		return "code";
+	}
+	@RequestMapping("/contact")
+	public String contact() {
+		return "contact";
+	}
+	@RequestMapping("/submit")
+	public String submit() {
+		return "photo";
+	}
+	@RequestMapping("/logout")
+	public String logout() {
+		return "index";
+	}
 }
 
 
